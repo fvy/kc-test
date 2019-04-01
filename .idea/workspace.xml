@@ -4,12 +4,25 @@
     <list default="true" id="feeb9464-a225-4898-8ff4-c38c238d5d1c" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/../../.idea/dataSources.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysql.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/IndexController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Db/DbConfiguration.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Db/DbConnection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Db/DbMapper.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Db/StorageAdapter.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Db/UserMaper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/user.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Newspaper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Reader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Template.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/Layout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/TableView.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/TimeView.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../swissmi-com.local" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Vagrantfile" beforeDir="false" afterPath="$PROJECT_DIR$/../../Vagrantfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../scripts/homestead.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../../scripts/homestead.rb" afterDir="false" />
@@ -133,7 +146,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Views/TableView.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -144,6 +157,15 @@
                 <element signature="e#0#6#0" expanded="true" />
                 <element signature="e#6#12#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -191,7 +213,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -285,52 +307,6 @@
             </path>
             <path>
               <item name="korus.test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="korus.test" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="korus.test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="korus.test" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="korus.test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="korus.test" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="korus.test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="korus.test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="korus.test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="korus.test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="korus.test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="korus.test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="korus.test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="korus.test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="korus.test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="korus.test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="korus.test" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
             </path>
             <path>
@@ -405,15 +381,15 @@
       <option name="presentableId" value="Default" />
       <updated>1553867732935</updated>
       <workItem from="1553867737941" duration="293000" />
-      <workItem from="1553868266261" duration="58915000" />
+      <workItem from="1553868266261" duration="59436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59208000" />
+    <option name="totallyTimeSpent" value="59729000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="213" y="110" width="1564" height="947" extended-state="0" />
+    <frame x="209" y="123" width="1564" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23204787" />
@@ -718,6 +694,13 @@
             <element signature="e#0#6#0" expanded="true" />
             <element signature="e#6#12#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
         </state>
       </provider>
     </entry>

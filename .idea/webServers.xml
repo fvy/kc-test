@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="27ab8549-6d7b-4c72-b381-b793b00f48f3" name="korus.test" url="http://korus.test">
+        <fileTransfer port="0" mountedRoot="D:\OpenServer\domains\Homestead\Code\korus.test" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

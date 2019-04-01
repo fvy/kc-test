@@ -3,7 +3,7 @@ Demo URL : http://kc.codingcompare.pro/
 ``Окружение``
 
 * PHP7.1
-* MySQL 5.5+ ([http://meta.wikimedia.org/ dump]), * MySQL 5.7+ (dump)
+* MySQL 5.5+ ([http://kc.codingcompare.pro/mysql55.sql]), * MySQL 5.7+ ([http://kc.codingcompare.pro/mysql57.sql])
 
 ``Задание``
 

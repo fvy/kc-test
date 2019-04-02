@@ -19,10 +19,10 @@
     $prntArrows = function ($path) {
         $c = substr_count($path, '/');
         for ($i = 0; $i <= $c; $i++) {
-            if ($i == 0) {
+            if ($i == $c) {
                 echo "&nbsp;&nbsp;<i class=\"fas fa-level-up-alt fa-rotate-90\"></i>";
             } else {
-                echo "&nbsp;&nbsp;<i class=\"fas fa-long-arrow-alt-right\"></i>";
+                echo "&nbsp;&nbsp;&nbsp;";
             }
         }
     };
@@ -39,10 +39,10 @@
             <th scope="row"><?= $val['Id'] ?></th>
             <td><?= $prntArrows($val['path']); ?></td>
             <td><?= $val['Name'] ?></td>
-            <td <?=$checkBadEmails($val['Email']);?>><?= $val['Email'] ?></td>
+            <td <?= $checkBadEmails($val['Email']); ?>><?= $val['Email'] ?></td>
             <td><?= $val['EmployerId'] ?></td>
             <td><?= $val['utime'] ?></td>
-            <td><?php/* $val['udate'] */?></td>
+            <td><?php/* $val['udate'] */ ?></td>
             <td><?= $val['Info'] ?></td>
         </tr>
         <?php

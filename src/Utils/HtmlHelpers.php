@@ -15,4 +15,9 @@ class HtmlHelpers
     {
         return htmlspecialchars_decode(strip_tags($str));
     }
+
+    public static function sanitizeDate($dateField)
+    {
+        return filter_input(INPUT_POST, $dateField, FILTER_SANITIZE_SPECIAL_CHARS);
+    }
 }

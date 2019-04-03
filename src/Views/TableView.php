@@ -10,7 +10,7 @@ use fvy\Korus\Utils\HtmlHelpers;
         <th scope="col">Иерархия<br> подчинения</th>
         <th scope="col">Имя</th>
         <th scope="col">Email</th>
-        <th scope="col">ID Руководителя</th>
+        <th scope="col">ID <br>Нач-ка</th>
         <th scope="col">Списаное время</th>
         <th scope="col">Время с учетом<br>подчиненных</th>
         <!--        <th scope="col">Info</th>-->
@@ -45,7 +45,7 @@ use fvy\Korus\Utils\HtmlHelpers;
             <td><?= $val['EmployerId'] ?? '-' ?></td>
             <td><?= $val['utime'] ?></td>
             <td><?= $val['totalsum']; ?></td>
-            <td><?php/* HtmlHelpers::rawHtml($val['Info']);*/ ?></td>
+<!--            <td><?php/* HtmlHelpers::rawHtml($val['Info']);*/?></td>-->
         </tr>
         <?php
     }

@@ -12,6 +12,12 @@ class Template
         $this->properties = array();
     }
 
+    /**
+     * @param $filename
+     * @param null $data
+     * @return false|string
+     * @throws \Exception
+     */
     public function render($filename, $data = null)
     {
         ob_start();

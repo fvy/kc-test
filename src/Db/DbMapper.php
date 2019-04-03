@@ -20,14 +20,14 @@ class DbMapper
 
     public static function usersList($startDate = null, $endDate = null)
     {
-        // filter the dates
-        $startDate = self::filterTheDate($startDate);
-        $endDate = self::filterTheDate($endDate);
-
         // pass without the dates
         if (empty($startDate) && empty($endDate)) {
             return self::usersListWoTime();
         }
+
+        // filter the dates
+        $startDate = self::filterTheDate($startDate);
+        $endDate = self::filterTheDate($endDate);
 
         // go with period
         $dateStr = (!empty($startDate) ? 'AND `Date` >= :startDate' : '') . ' ' .
@@ -96,14 +96,10 @@ class DbMapper
         return $sth->fetchAll();
     }
 
-    public static function filterTheDate($date, $mask = "@{0-9},4-{0-9/}2-{0-9/}2@")
+    public static function filterTheDate($date)
     {
-        return filter_var(
-            $date,
-            FILTER_VALIDATE_REGEXP,
-            array(
-                "options" => array("regexp" => $mask)
-            )
-        );
+        if (empty($date)) return false;
+        $date_arr = explode("-", $date);
+        return (checkdate($date_arr[1], $date_arr[2], $date_arr[0]))? $date : false;
     }
 }

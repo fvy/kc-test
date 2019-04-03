@@ -16,10 +16,11 @@ Demo URL : http://kc.codingcompare.pro/
 
 TODO list:
 1. Обработка ошибок / Customize Exceptions
-2. Документирование
+2. Документирование/ PHPDoc
 3. Composer + Unit tests
 4. Оптимизировать запросы с Nested Set with autoupdate Stored Procedures
 5. Pagination
 6. Add Routing
 7. Add Controllers
 8. Add Models
+9. Add i18n

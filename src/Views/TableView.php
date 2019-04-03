@@ -13,7 +13,7 @@ use fvy\Korus\Utils\HtmlHelpers;
         <th scope="col">ID Руководителя</th>
         <th scope="col">Списаное время</th>
         <th scope="col">Время с учетом<br>подчиненных</th>
-<!--        <th scope="col">Info</th>-->
+        <!--        <th scope="col">Info</th>-->
     </tr>
     </thead>
     <tbody>

@@ -21,15 +21,18 @@ class DbConnection
 
     public function getDsn()
     {
-        $connection = new \PDO("mysql:dbname={$this->configuration->getDatabase()};host={$this->configuration->getHost()}",
-            $this->configuration->getUsername(),
-            $this->configuration->getPassword(),
-            array(
-                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-                \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
-            )
-        );
-        /* change character set to utf8 */
+        try {
+            $connection = new \PDO("mysql:dbname={$this->configuration->getDatabase()};host={$this->configuration->getHost()}",
+                $this->configuration->getUsername(),
+                $this->configuration->getPassword(),
+                array(
+                    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+                    \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
+                )
+            );
+        } catch (\PDOException $e) {
+            die('Unable to open database connection' . $e->getTrace());
+        }
         return $connection;
     }
 }

@@ -8,14 +8,22 @@ class DbMapper
 {
     public static $db;
 
+    private $strDate;
+    private $strDateArr;
+
     function __construct($db)
     {
         self::$db = $db;
     }
 
-    public static function insert()
+    public function setStrDate($date)
     {
+        $this->strDate = $date;
+    }
 
+    public function getStrDate()
+    {
+        return $this->strDate;
     }
 
     /**
@@ -23,7 +31,7 @@ class DbMapper
      * @param null $endDate
      * @return mixed
      */
-    public static function usersList($startDate = null, $endDate = null)
+    public function usersList($startDate = null, $endDate = null)
     {
         // pass without the dates
         if (empty($startDate) && empty($endDate)) {
@@ -31,16 +39,18 @@ class DbMapper
         }
 
         // filter the dates
-        $startDate = self::filterTheDate($startDate);
-        $endDate = self::filterTheDate($endDate);
+        $startDate = $this->filterTheDate($startDate);
+        $endDate = $this->filterTheDate($endDate);
 
         // go with period
         $dateStr = (!empty($startDate) ? 'AND `Date` >= :startDate' : '') . ' ' .
             (!empty($endDate) ? 'AND `Date` <= :endDate' : '');
 
+        $this->setStrDate($dateStr);
+
         $sth = self::$db->prepare('
             SELECT 
-                Id, Name, Email, userlvl(id) AS path, EmployerId, 
+                Id, `Name`, Email, userlvl(id) AS path, EmployerId, 
                 TIME_FORMAT(
                     (select sum(`Time`) from timesheet WHERE id=EployeeId ' . $dateStr . '
                     ), "%H:%i:%s"
@@ -66,7 +76,7 @@ class DbMapper
         $array = [];
         if (!empty($startDate)) $array += [':startDate' => $startDate];
         if (!empty($endDate)) $array += [':endDate' => $endDate];
-
+        $this->strDateArr = $array;
         $sth->execute($array);
         //$sth->debugDumpParams();
 
@@ -82,7 +92,7 @@ class DbMapper
     {
         $sth = self::$db->prepare('
             SELECT 
-                Id, Name, Email, userlvl(id) AS path, EmployerId, 
+                Id, `Name`, Email, userlvl(id) AS path, EmployerId, 
                 TIME_FORMAT(
                     (select sum(`Time`) from timesheet WHERE id=EployeeId), "%H:%i:%s"
                 ) AS utime,
@@ -108,12 +118,47 @@ class DbMapper
 
     /**
      * @param $date
-     * @return bool
+     * @return mixed
      */
-    public static function filterTheDate($date)
+    public function filterTheDate($date)
     {
         if (empty($date)) return false;
         $date_arr = explode("-", $date);
-        return (checkdate($date_arr[1], $date_arr[2], $date_arr[0]))? $date : false;
+        return (checkdate($date_arr[1], $date_arr[2], $date_arr[0])) ? $date : false;
+    }
+
+    public function checkUserMissedHours()
+    {
+        $dateStr = $this->getStrDate();
+        $sql = '
+        SELECT 
+        EployeeId, TIME_FORMAT(sum(`Time`), "%H:%i:%s") utime, `Date`
+        FROM timesheet 
+        WHERE `Time`>"00:00:00" AND `Time`<"08:00:00"
+                ' . $dateStr . '
+        group by date
+        order by date
+        ';
+        $sth = self::$db->prepare($sql);
+        $sth->execute($this->strDateArr);
+
+        $arr = [];
+        foreach ($sth->fetchAll() as $val) {
+            $tmp = "<div class=\"row table__row\">";
+            $tmp .= "<div class=\"col-xs-6\">" . $val['Date'] . "</div>";
+            $tmp .= "<div class=\"col-xs-6\">" . $val['utime'] . "</div>";
+            $tmp .= "</div>";
+            if (isset($arr[$val['EployeeId']])) {
+                $arr[$val['EployeeId']] .= $tmp;
+            } else {
+                $arr[$val['EployeeId']] = $tmp;
+            }
+        }
+        return $arr;
+    }
+
+    public static function insert()
+    {
+
     }
 }

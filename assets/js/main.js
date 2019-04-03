@@ -12,4 +12,10 @@ $(function () {
                 '</div>'
         }
     )
+
+    $('[data-toggle="popover-hover"]').popover({
+        html: true,
+        trigger: 'hover',
+        placement: 'top'
+    });
 });

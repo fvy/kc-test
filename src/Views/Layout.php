@@ -27,15 +27,16 @@ use fvy\Korus\Template;
         <div class="col-6">
             <?php
             $view = new Template();
-            echo $view->render('FormView', $this->properties["data"]);
+            echo $view->render('FormView');
             ?>
         </div>
         <div class="row">
             <div class="col-12">
                 <h3><?= $this->properties["name"]; ?></h3>
                 <?php
-                $view = new Template();
-                echo $view->render('TableView', $this->properties["data"]);
+                $view->data = $this->properties["data"];
+                $view->dataOfTs = $this->properties["dataOfTs"];
+                echo $view->render('TableView');
                 ?>
             </div>
         </div>

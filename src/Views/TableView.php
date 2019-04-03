@@ -13,7 +13,7 @@ use fvy\Korus\Utils\HtmlHelpers;
         <th scope="col">ID <br>Нач-ка</th>
         <th scope="col">Списаное время</th>
         <th scope="col">Время с учетом<br>подчиненных</th>
-        <!--        <th scope="col">Info</th>-->
+        <th scope="col">Недоработка</th>
     </tr>
     </thead>
     <tbody>
@@ -35,7 +35,12 @@ use fvy\Korus\Utils\HtmlHelpers;
         }
     };
 
-    foreach ($data as $val) {
+    $row_header = '<div class="row">
+    <div class="col-xs-6">Дата</div>
+    <div class="col-xs-6">Время</div>
+    </div>';
+
+    foreach ($this->properties['data'] as $val) {
         ?>
         <tr data-toggle="tooltip" data-placement="top" title="<?= HtmlHelpers::rawHtml($val['Info']); ?>">
             <th scope="row"><?= $val['Id'] ?></th>
@@ -45,7 +50,10 @@ use fvy\Korus\Utils\HtmlHelpers;
             <td><?= $val['EmployerId'] ?? '-' ?></td>
             <td><?= $val['utime'] ?></td>
             <td><?= $val['totalsum']; ?></td>
-<!--            <td><?php/* HtmlHelpers::rawHtml($val['Info']);*/?></td>-->
+            <th scope="col" data-placement="top" data-toggle="popover-hover"
+                data-content='<?=$row_header?><?= isset($this->properties['dataOfTs'][$val['Id']]) ? $this->properties['dataOfTs'][$val['Id']] : ""; ?>'>
+                <?=isset($this->properties['dataOfTs'][$val['Id']])?"<button>недоработка</button>":"";?>
+            </th>
         </tr>
         <?php
     }

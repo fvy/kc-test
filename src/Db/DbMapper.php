@@ -136,8 +136,8 @@ class DbMapper
         FROM timesheet 
         WHERE `Time`>"00:00:00" AND `Time`<"08:00:00"
                 ' . $dateStr . '
-        group by date
-        order by date
+        GROUP BY EployeeId,`Date`
+        ORDER BY EployeeId,`Date`
         ';
         $sth = self::$db->prepare($sql);
         $sth->execute($this->strDateArr);

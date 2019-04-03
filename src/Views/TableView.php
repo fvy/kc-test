@@ -7,13 +7,13 @@ use fvy\Korus\Utils\HtmlHelpers;
     <thead>
     <tr>
         <th scope="col">#</th>
-        <th scope="col">Hierarchy</th>
-        <th scope="col">Name</th>
+        <th scope="col">Иерархия<br> подчинения</th>
+        <th scope="col">Имя</th>
         <th scope="col">Email</th>
-        <th scope="col">Employer</th>
-        <th scope="col">Time of Person</th>
-        <th scope="col">Sum time</th>
-        <th scope="col">Info</th>
+        <th scope="col">ID Руководителя</th>
+        <th scope="col">Списаное время</th>
+        <th scope="col">Время с учетом<br>подчиненных</th>
+<!--        <th scope="col">Info</th>-->
     </tr>
     </thead>
     <tbody>
@@ -37,7 +37,7 @@ use fvy\Korus\Utils\HtmlHelpers;
 
     foreach ($data as $val) {
         ?>
-        <tr>
+        <tr data-toggle="tooltip" data-placement="top" title="<?= HtmlHelpers::rawHtml($val['Info']); ?>">
             <th scope="row"><?= $val['Id'] ?></th>
             <td><?= $prntArrows($val['path']); ?></td>
             <td><?= HtmlHelpers::textOnly($val['Name']); ?></td>
@@ -45,7 +45,7 @@ use fvy\Korus\Utils\HtmlHelpers;
             <td><?= $val['EmployerId'] ?? '-' ?></td>
             <td><?= $val['utime'] ?></td>
             <td><?= $val['totalsum']; ?></td>
-            <td><?= HtmlHelpers::rawHtml($val['Info']); ?></td>
+            <td><?php/* HtmlHelpers::rawHtml($val['Info']);*/ ?></td>
         </tr>
         <?php
     }

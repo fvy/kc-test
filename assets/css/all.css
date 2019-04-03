@@ -3,3 +3,31 @@
     border-width: .2rem;
     background-color: beige;
 }
+
+/* Styles for custom tooltip template */
+.tooltip-head {
+    color: #000;
+    background: beige;
+    padding: 10px 10px 5px;
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+    margin-bottom: -2px; /* Hide default tooltip rounded corner from top */
+}
+
+.tooltip-head .glyphicon {
+    font-size: 22px;
+    vertical-align: bottom;
+}
+
+.tooltip-head h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.tooltip-inner {
+    color: #000;
+    background: beige;
+    min-width: 250px;
+    text-align: left;
+    padding: 25px;
+}

@@ -1,7 +1,7 @@
 <?php
-//use fvy\Korus\Model;
-//use fvy\Korus\View;
+
 use fvy\Korus\Template;
+use fvy\Korus\Db\DbMapper;
 
 require_once 'Psr4Autoloader.php';
 require_once 'config.php';
@@ -19,6 +19,8 @@ $view = new Template("Layout");
 $view->title = "Отчет по сотрудникам";
 $view->properties['name'] = "Список пользователей";
 
-$dbMapper = new fvy\Korus\Db\DbMapper($conn);
-$view->data = $dbMapper->usersList($_POST["startDate"] ?? null ,$_POST["endDate"] ?? null);
+$dbMapper = new DbMapper($conn);
+$view->data = $dbMapper->usersList($_POST["startDate"] ?? null, $_POST["endDate"] ?? null);
+$view->dataOfTs = $dbMapper->checkUserMissedHours();
+
 echo $view->render('Layout');

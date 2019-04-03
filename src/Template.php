@@ -14,11 +14,10 @@ class Template
 
     /**
      * @param $filename
-     * @param null $data
      * @return false|string
      * @throws \Exception
      */
-    public function render($filename, $data = null)
+    public function render($filename)
     {
         ob_start();
         $tmpl = $this->_scriptPath . "/" . $filename . ".php";

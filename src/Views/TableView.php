@@ -1,5 +1,7 @@
 <?php
 
+use fvy\Korus\Utils\HtmlHelpers;
+
 ?>
 <table class="table table-hover">
     <thead>
@@ -38,12 +40,12 @@
         <tr>
             <th scope="row"><?= $val['Id'] ?></th>
             <td><?= $prntArrows($val['path']); ?></td>
-            <td><?= $val['Name'] ?></td>
+            <td><?= HtmlHelpers::textOnly($val['Name']); ?></td>
             <td <?= $checkBadEmails($val['Email']); ?>><?= $val['Email'] ?></td>
-            <td><?= $val['EmployerId'] ?></td>
+            <td><?= $val['EmployerId'] ?? '-' ?></td>
             <td><?= $val['utime'] ?></td>
-            <td><?php/* $val['udate'] */ ?></td>
-            <td><?= $val['Info'] ?></td>
+            <td><?= $val['totalsum']; ?></td>
+            <td><?= HtmlHelpers::rawHtml($val['Info']); ?></td>
         </tr>
         <?php
     }

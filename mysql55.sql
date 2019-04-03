@@ -28,7 +28,7 @@ CREATE DEFINER=`korus`@`localhost` PROCEDURE `userlvl` (IN `user_id` INT, OUT `p
     DECLARE temppath TEXT;
     DECLARE tempparent INT;
     SET max_sp_recursion_depth = 255;
-    SELECT CONCAT('lvl', id), EmployerId FROM users WHERE id = user_id INTO lvlname, tempparent;
+    SELECT id, EmployerId FROM users WHERE id = user_id INTO lvlname, tempparent;
     IF tempparent IS NULL
     THEN
         SET path = lvlname;

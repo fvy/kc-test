@@ -18,6 +18,11 @@ class DbMapper
 
     }
 
+    /**
+     * @param null $startDate
+     * @param null $endDate
+     * @return mixed
+     */
     public static function usersList($startDate = null, $endDate = null)
     {
         // pass without the dates
@@ -68,6 +73,11 @@ class DbMapper
         return $sth->fetchAll();
     }
 
+    /**
+     * @param null $startDate
+     * @param null $endDate
+     * @return mixed
+     */
     public static function usersListWoTime($startDate = null, $endDate = null)
     {
         $sth = self::$db->prepare('
@@ -96,6 +106,10 @@ class DbMapper
         return $sth->fetchAll();
     }
 
+    /**
+     * @param $date
+     * @return bool
+     */
     public static function filterTheDate($date)
     {
         if (empty($date)) return false;

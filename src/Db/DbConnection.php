@@ -21,20 +21,6 @@ class DbConnection
 
     public function getDsn()
     {
-        // this is just for the sake of demonstration, not a real DSN
-        // notice that only the injected config is used here, so there is
-        // a real separation of concerns here
-
-        /*
-            return sprintf(
-            '%s:%s@%s:%d',
-            $this->configuration->getUsername(),
-            $this->configuration->getPassword(),
-            $this->configuration->getDatabase(),
-            $this->configuration->getHost(),
-            $this->configuration->getPort()
-        );
-        */
         $connection = new \PDO("mysql:dbname={$this->configuration->getDatabase()};host={$this->configuration->getHost()}",
             $this->configuration->getUsername(),
             $this->configuration->getPassword(),

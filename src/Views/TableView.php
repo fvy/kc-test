@@ -39,8 +39,12 @@ use fvy\Korus\Utils\HtmlHelpers;
     <div class="col-xs-6">Дата</div>
     <div class="col-xs-6">Время</div>
     </div>';
-
     foreach ($this->properties['data'] as $val) {
+        $dataContent = '';
+        if (isset($this->properties['dataOfTs'][$val['Id']])) {
+            $dataContent = $row_header;
+            $dataContent .= $this->properties['dataOfTs'][$val['Id']];
+        }
         ?>
         <tr data-toggle="tooltip" data-placement="top" title="<?= HtmlHelpers::rawHtml($val['Info']); ?>">
             <th scope="row"><?= $val['Id'] ?></th>
@@ -51,8 +55,8 @@ use fvy\Korus\Utils\HtmlHelpers;
             <td><?= $val['utime'] ?></td>
             <td><?= $val['totalsum']; ?></td>
             <th scope="col" data-placement="top" data-toggle="popover-hover"
-                data-content='<?=$row_header?><?= isset($this->properties['dataOfTs'][$val['Id']]) ? $this->properties['dataOfTs'][$val['Id']] : ""; ?>'>
-                <?=isset($this->properties['dataOfTs'][$val['Id']])?"<button>недоработка</button>":"";?>
+                data-content='<?= $dataContent; ?>'>
+                <?= isset($this->properties['dataOfTs'][$val['Id']]) ? "<button>недоработка</button>" : ""; ?>
             </th>
         </tr>
         <?php

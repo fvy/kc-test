@@ -77,6 +77,7 @@ class DbMapper
         if (!empty($startDate)) $array += [':startDate' => $startDate];
         if (!empty($endDate)) $array += [':endDate' => $endDate];
         $this->strDateArr = $array;
+
         $sth->execute($array);
         //$sth->debugDumpParams();
 

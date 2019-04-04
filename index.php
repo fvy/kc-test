@@ -1,7 +1,7 @@
 <?php
 
-use fvy\Korus\Template;
-use fvy\Korus\Db\DbMapper;
+use Fvy\Korus\Template;
+use Fvy\Korus\Db\DbMapper;
 
 require_once 'Psr4Autoloader.php';
 require_once 'config.php';

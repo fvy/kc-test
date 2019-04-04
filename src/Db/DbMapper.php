@@ -1,7 +1,7 @@
 <?php
 
 
-namespace fvy\Korus\Db;
+namespace Fvy\Korus\Db;
 
 
 class DbMapper

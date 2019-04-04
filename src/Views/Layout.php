@@ -1,6 +1,6 @@
 <?php
 
-use fvy\Korus\Template;
+use Fvy\Korus\Template;
 
 ?>
 <!doctype html>

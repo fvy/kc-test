@@ -1,7 +1,7 @@
 <?php
 
 
-namespace fvy\Korus\Utils;
+namespace Fvy\Korus\Utils;
 
 
 class HtmlHelpers

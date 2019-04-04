@@ -1,6 +1,6 @@
 <?php
 
-namespace fvy;
+namespace Fvy;
 
 /**
  * An example of a general-purpose implementation that includes the optional

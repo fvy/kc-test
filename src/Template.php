@@ -1,6 +1,6 @@
 <?php
 
-namespace fvy\Korus;
+namespace Fvy\Korus;
 
 class Template
 {

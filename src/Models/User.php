@@ -1,6 +1,6 @@
 <?php
 
-namespace fvy\Korus\Models;
+namespace Fvy\Korus\Models;
 
 class User
 {

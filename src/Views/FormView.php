@@ -1,6 +1,6 @@
 <?php
 
-use fvy\Korus\Utils\HtmlHelpers;
+use Fvy\Korus\Utils\HtmlHelpers;
 
 ?>
 <form autocomplete="off" action="<?= $_SERVER["PHP_SELF"]; ?>" method="post" class="form-inline sandbox-form"

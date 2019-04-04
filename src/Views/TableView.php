@@ -1,6 +1,6 @@
 <?php
 
-use fvy\Korus\Utils\HtmlHelpers;
+use Fvy\Korus\Utils\HtmlHelpers;
 
 ?>
 <table class="table table-hover">

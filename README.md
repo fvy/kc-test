@@ -1,4 +1,4 @@
-Demo URL : http://kc.codingcompare.pro/
+Demo URL : http://coding.ru.com/kc-test/
 
 ``Окружение``
 

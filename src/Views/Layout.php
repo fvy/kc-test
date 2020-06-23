@@ -16,7 +16,7 @@ use Fvy\Korus\Template;
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/all.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
     <title><?= $this->properties["title"]; ?></title>
 </head>
@@ -50,7 +50,7 @@ use Fvy\Korus\Template;
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"
         crossorigin="anonymous"></script>
-<script src="../assets/js/main.js"
+<script src="assets/js/main.js"
         crossorigin="anonymous"></script>
 
 </body>
